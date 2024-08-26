@@ -14,5 +14,8 @@ export default defineConfig({
   },
   optimizeDeps: {
     include: ['date-fns']
-  }
+  },
+  build: {
+    chunkSizeWarningLimit: 1000, // Set a higher limit (in KB)
+  },
 })
