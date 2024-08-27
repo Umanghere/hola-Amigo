@@ -50,7 +50,7 @@ const AddModal = ({ open, handleClose, handleSave }) => {
   useEffect(() => {
     const fetchEmployees = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/employeesData");
+        const response = await axios.get("https://project-data-2-h4xc.onrender.com/employeesData");
         setEmployees(response.data);
       } catch (error) {
         console.error("Failed to fetch employee data:", error);
@@ -100,7 +100,7 @@ const AddModal = ({ open, handleClose, handleSave }) => {
     } else {
       const dataToSave = {
         ...newEmployee,
-        Name: newEmployee.Nominate, // Map Nominate field to Name field
+        Name: newEmployee.Nominate, 
       };
       handleSave(dataToSave);
     }

@@ -54,9 +54,9 @@ const App = () => {
     <Suspense fallback={<div>Loading...</div>}>
       <Routes>
         {/* Adjust the paths to match your live URL structure */}
-        <Route path="/team-services2.onrender.com/login" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route
-          path="/team-services2.onrender.com/*"
+          path="/*"
           element={
             <ProtectedRoute>
               <RootLayout />

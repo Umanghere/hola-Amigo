@@ -153,13 +153,13 @@ const TeamMembersTable = () => {
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const [editModalOpen, setEditModalOpen] = useState(false);
   const [addModalOpen, setAddModalOpen] = useState(false);
-  const [uploadModalOpen, setUploadModalOpen] = useState(false); // New state for upload modal
+  const [uploadModalOpen, setUploadModalOpen] = useState(false); 
   const [editData, setEditData] = useState({});
   const { userRole, userEmpId}= useAuth(); // Access user role, EmpId, and userName from context
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/employeesData")
+      .get("https://project-data-2-h4xc.onrender.com/employeesData")
       .then((response) => {
         setEmployeesData(response.data);
       })
@@ -180,7 +180,7 @@ const TeamMembersTable = () => {
   const handleSave = (updatedEmployee) => {
     axios
       .put(
-        `http://localhost:8000/employeesData/${updatedEmployee.id}`,
+        `https://project-data-2-h4xc.onrender.com/employeesData/${updatedEmployee.id}`,
         updatedEmployee
       )
       .then((response) => {
@@ -207,7 +207,7 @@ const TeamMembersTable = () => {
 
   const handleAddSave = (newEmployee) => {
     axios
-      .post("http://localhost:8000/employeesData", newEmployee)
+      .post("https://project-data-2-h4xc.onrender.com/employeesData", newEmployee)
       .then((response) => {
         setEmployeesData((prevData) => [...prevData, response.data]);
         setAddModalOpen(false);
@@ -229,7 +229,7 @@ const TeamMembersTable = () => {
   const handleUploadSave = (newData) => {
     newData.forEach((employee) => {
       axios
-        .post("http://localhost:8000/employeesData", employee)
+        .post("https://project-data-2-h4xc.onrender.com/employeesData", employee)
         .then((response) => {
           setEmployeesData((prevData) => [...prevData, response.data]);
         })

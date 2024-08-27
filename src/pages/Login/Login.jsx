@@ -14,7 +14,7 @@ const Login = () => {
     event.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:8000/users');
+      const response = await fetch('https://project-data-2-h4xc.onrender.com/users');
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
@@ -28,7 +28,7 @@ const Login = () => {
         setError('Incorrect password');
       } else {
         login(email, user.role);
-        navigate('/Team-Service-UI/', { replace: true });
+        navigate('/', { replace: true });
       }
     } catch (error) {
       setError('Failed to login: ' + error.message);

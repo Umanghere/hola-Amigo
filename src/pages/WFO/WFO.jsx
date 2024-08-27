@@ -34,7 +34,7 @@ function CalendarTable() {
   useEffect(() => {
     if (userRole === "admin" || userRole === "manager") {
       axios
-        .get("http://localhost:8000/employeeAttendances")
+        .get("https://project-data-2-h4xc.onrender.com/employeeAttendances")
         .then((response) => {
           setEmployeePreferences(response.data);
         })
@@ -49,7 +49,7 @@ function CalendarTable() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/users?email=${userEmail}`)
+      .get(`https://project-data-2-h4xc.onrender.com/users?email=${userEmail}`)
       .then((response) => {
         const user = response.data[0];
         if (user) {
@@ -175,7 +175,7 @@ function CalendarTable() {
     ).padStart(2, "0")}`;
     axios
       .get(
-        `http://localhost:8000/employeeAttendances?name=${encodeURIComponent(
+        `https://project-data-2-h4xc.onrender.com/employeeAttendances?name=${encodeURIComponent(
           userNameAndId
         )}&month=${monthYear}`
       )
@@ -216,7 +216,7 @@ function CalendarTable() {
 
     axios
       .get(
-        `http://localhost:8000/employeeAttendances?name=${encodeURIComponent(
+        `https://project-data-2-h4xc.onrender.com/employeeAttendances?name=${encodeURIComponent(
           userNameAndId
         )}&month=${monthYear}`
       )
@@ -225,7 +225,7 @@ function CalendarTable() {
         if (existingData) {
           axios
             .put(
-              `http://localhost:8000/employeeAttendances/${existingData.id}`,
+              `https://project-data-2-h4xc.onrender.com/employeeAttendances/${existingData.id}`,
               data
             )
             .then(() => {
@@ -244,7 +244,7 @@ function CalendarTable() {
             });
         } else {
           axios
-            .post("http://localhost:8000/employeeAttendances", data)
+            .post("https://project-data-2-h4xc.onrender.com/employeeAttendances", data)
             .then(() => {
               setSnackbarMessage(
                 `Attendance saved successfully for ${userNameAndId}`

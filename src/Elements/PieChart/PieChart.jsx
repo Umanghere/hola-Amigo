@@ -9,7 +9,7 @@ const PieChart = () => {
 
   useEffect(() => {
     // Fetch employee data from the API
-    axios.get("http://localhost:8000/employeesData")
+    axios.get("https://project-data-2-h4xc.onrender.com/employeesData")
       .then((response) => {
         const employees = response.data;
         calculateSkillDistribution(employees);
@@ -46,19 +46,19 @@ const PieChart = () => {
 
   const options = {
     title: "Team Competency",
-    colors: ["#199555", '#F1C617', "#0082FF", "#93C747"], // Customize colors as needed
+    colors: ["#199555", '#F1C617', "#0082FF", "#93C747"], 
     titleTextStyle: {
-      fontSize: 20, // Increase title font size
+      fontSize: 20,
       bold: true,
     },
     legend: {
       position: "left",
       textStyle: {
-        fontSize: 16, // Increase legend font size
+        fontSize: 16, 
       },
     },
     pieSliceTextStyle: {
-      fontSize: 18, // Increase pie slice text font size
+      fontSize: 18, 
     },
     chartArea: {
       left: 50,

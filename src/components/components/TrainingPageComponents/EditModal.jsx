@@ -113,7 +113,7 @@ const EditModal = ({ open, handleClose, handleSave, employeeData }) => {
                 label="Planned Date"
                 value={formData.PlannedDate}
                 onChange={(value) => handleDateChange("PlannedDate", value)}
-                slots={{ textField: (params) => <TextField {...params} fullWidth margin="normal" /> }} // Updated this line
+                slots={{ textField: (params) => <TextField {...params} fullWidth margin="normal" /> }} 
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -121,7 +121,7 @@ const EditModal = ({ open, handleClose, handleSave, employeeData }) => {
                 label="Start Date"
                 value={formData.StartDate}
                 onChange={(value) => handleDateChange("StartDate", value)}
-                slots={{ textField: (params) => <TextField {...params} fullWidth margin="normal" /> }} // Updated this line
+                slots={{ textField: (params) => <TextField {...params} fullWidth margin="normal" /> }} 
                 PopperProps={{
                   anchorOrigin: {
                     vertical: "top",
@@ -183,7 +183,7 @@ const EditModal = ({ open, handleClose, handleSave, employeeData }) => {
                 label="End Date"
                 value={formData.EndDate}
                 onChange={(value) => handleDateChange("EndDate", value)}
-                slots={{ textField: (params) => <TextField {...params} fullWidth margin="normal" /> }} // Updated this line
+                slots={{ textField: (params) => <TextField {...params} fullWidth margin="normal" /> }}
               />
             </Grid>
           </Grid>

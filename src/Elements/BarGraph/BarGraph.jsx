@@ -9,7 +9,7 @@ const BarGraph = () => {
 
   useEffect(() => {
     // Fetch employee data from the API
-    axios.get("http://localhost:8000/employeesData")
+    axios.get("https://project-data-2-h4xc.onrender.com/employeesData")
       .then((response) => {
         const employees = response.data;
         calculateGradeDistribution(employees);
@@ -42,7 +42,7 @@ const BarGraph = () => {
       fontSize: 20,
       bold: true,
     },
-    legend: { position: "none" }, // Hide legend as we have only one series
+    legend: { position: "none" }, 
     hAxis: {
       title: "Grade",
     },

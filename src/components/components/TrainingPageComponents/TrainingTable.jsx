@@ -156,11 +156,11 @@ export default function TrainingTable() {
   const [editData, setEditData] = useState({});
   const [copySuccess, setCopySuccess] = useState(false);
   const [copyMessage, setCopyMessage] = useState("");
-  const { userRole, userEmpId, userName } = useAuth(); // Access user role, EmpId, and userName from context
+  const { userRole, userEmpId, userName } = useAuth(); 
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/trainingData")
+      .get("https://project-data-2-h4xc.onrender.com/trainingData")
       .then((response) => {
         setTrainingData(response.data);
       })
@@ -177,7 +177,7 @@ export default function TrainingTable() {
   const handleSave = (updatedEmployee) => {
     axios
       .put(
-        `http://localhost:8000/trainingData/${updatedEmployee.id}`,
+        `https://project-data-2-h4xc.onrender.com/trainingData/${updatedEmployee.id}`,
         updatedEmployee
       )
       .then((response) => {
@@ -204,7 +204,7 @@ export default function TrainingTable() {
 
   const handleAddSave = (newEmployee) => {
     axios
-      .post("http://localhost:8000/trainingData", newEmployee)
+      .post("https://project-data-2-h4xc.onrender.com/trainingData", newEmployee)
       .then((response) => {
         setTrainingData((prevData) => [...prevData, response.data]);
         setAddModalOpen(false);
@@ -314,7 +314,7 @@ export default function TrainingTable() {
                       backgroundColor: "blue",
                       color: "white",
                       "&:hover": { backgroundColor: "darkblue" },
-                      marginRight: "8px", // Space between Add and Download
+                      marginRight: "8px", 
                     }}
                   >
                     <AddIcon />
