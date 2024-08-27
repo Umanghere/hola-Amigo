@@ -1,15 +1,15 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-// Create the AuthContext
+
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [userEmail, setUserEmail] = useState("");
-  const [userRole, setUserRole] = useState(""); // State for user role
-  const [userName, setUserName] = useState(""); // State for user name
-  const [userEmpId, setUserEmpId] = useState(""); // State for user EmpId
+  const [userRole, setUserRole] = useState(""); 
+  const [userName, setUserName] = useState(""); 
+  const [userEmpId, setUserEmpId] = useState(""); 
   const navigate = useNavigate();
   console.log(userEmpId);
   // Function to handle login
@@ -19,7 +19,7 @@ export const AuthProvider = ({ children }) => {
     setUserRole(role); // Set user role on login
 
     try {
-      const response = await fetch("http://localhost:8000/users");
+      const response = await fetch("https://project-data-2-h4xc.onrender.com/users");
       const users = await response.json();
 
       // Find the user based on the email
@@ -40,10 +40,10 @@ export const AuthProvider = ({ children }) => {
   const logout = () => {
     setIsAuthenticated(false);
     setUserEmail("");
-    setUserRole(""); // Clear user role on logout
-    setUserName(""); // Clear user name on logout
-    setUserEmpId(""); // Clear user EmpId on logout
-    navigate("/Team-Service-UI/login", { replace: true });
+    setUserRole("");
+    setUserName(""); 
+    setUserEmpId(""); 
+    navigate("/team-services2.onrender.com/login", { replace: true });
   };
 
   return (
