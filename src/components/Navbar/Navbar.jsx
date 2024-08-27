@@ -52,7 +52,7 @@ const Navbar = () => {
           <div className='flex gap-5'>
             <ul className='flex gap-8 text-xl items-center'>
               <li className={styles.li}>
-                <NavLink to="/" className={({ isActive }) => isActive ? styles.active : undefined} end>
+                <NavLink to="" className={({ isActive }) => isActive ? styles.active : undefined} end>
                   Dashboard
                 </NavLink>
               </li>
