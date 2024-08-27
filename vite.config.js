@@ -18,5 +18,8 @@ export default defineConfig({
   build: {
     chunkSizeWarningLimit: 1000, // Set a higher limit (in KB)
     outDir: 'dist', // Ensure this points to 'dist'
+    rollupOptions: {
+      input: '/src/main.jsx', // Ensures Vite correctly identifies the entry point
+    },
   },
 })
